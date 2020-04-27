@@ -1,0 +1,53 @@
+# Thank you for installing EasyTextCommands by lokka30.
+
+# Note: Commands can only be ran by players.
+# Note: You only have to run '/etc reload' if you have changed the
+#       'enabled commands' list. If you update anything in the commands
+#       section or messages.yml file, changes will apply as you save them! :D
+#       Enabled commands are cached for performance
+#       purposes - this is why you must reload them.
+
+
+# Enabled Commands: For commands to work, you must list them here.
+# Commands must be in lower case!
+enabled-commands:
+  - 'discord'
+  - 'villagersound'
+# - 'forums'
+  - 'permissionstest'
+
+# Commands Configuration: Here are the commands that you can make.
+# Commands must be in lower case!
+commands:
+
+  discord: # This command will play a sound and show text.
+    text:
+      - '&8-----------------------------------------'
+      - '&7Join our discord at &bserver.com/discord'
+      - '&8-----------------------------------------'
+    sound:
+      id: 'ENTITY_EXPERIENCE_ORB_PICKUP'
+      volume: 0.5
+      pitch: 2.0
+  villagersound: # This command will only play a sound.
+    sound:
+      id: 'ENTITY_VILLAGER_NO'
+      volume: 0.5
+      pitch: 1.0
+  forums: # This command won't work, because it isn't put in 'enabled-commands'.
+    text:
+      - '&7Our forums are currently &cunavailable&7. :('
+  permissionstest: # This command will only show the text and play the sound if the sender has permission.
+    permission: 'permissions.test'
+    text:
+      - '&b&lEasyTextCommands: &f&nSuccess!&7 You have permission. :)'
+    sound:
+      id: 'ENTITY_PLAYER_LEVELUP'
+      volume: 0.5
+      pitch: 2.0
+
+# Should ETC check for updates off the Spigot page?
+use-update-checker: true
+
+# Only touch this if you know what you are doing!
+file-version: 1

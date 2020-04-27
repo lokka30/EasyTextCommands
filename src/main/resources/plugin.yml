@@ -1,0 +1,19 @@
+name: EasyTextCommands
+main: io.github.lokka30.easytextcommands.EasyTextCommands
+version: ${project.version}
+description: ${project.description}
+api-version: '1.13'
+prefix: EasyTextCommands
+author: lokka30
+load: POSTWORLD
+
+commands:
+  easytextcommands:
+    aliases: [etc, easytextcmds]
+    description: 'View information about the plugin or reload the enabled commands list.'
+    usage: /<command> [reload]
+
+permissions:
+  easytextcommands.reload:
+    description: 'Allowed to use /etc reload'
+    default: op

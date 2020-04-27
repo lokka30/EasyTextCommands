@@ -1,0 +1,12 @@
+# The %prefix% placeholder is replaced with this:
+prefix: '&b&lEasyTextCommands:&7'
+
+# When a player doesn't have permission to run a command.
+no-permission: '%prefix% You don''t have access to that.'
+
+# These messages are sent when a user runs '/etc reload'.
+etc-reload-started: '%prefix% Started reloading the ''&benabled-commands&7'' list...'
+etc-reload-complete: '%prefix% ...reload complete.'
+
+# Only touch this if you know what you are doing!
+file-version: 1

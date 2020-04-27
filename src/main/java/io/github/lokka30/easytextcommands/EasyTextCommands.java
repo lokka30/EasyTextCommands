@@ -32,19 +32,22 @@ public class EasyTextCommands extends JavaPlugin {
         utils.log(LogLevel.INFO, "&8+---+ &fEnable Started &8+---+");
         final long startTime = System.currentTimeMillis();
 
-        utils.log(LogLevel.INFO, "&8(&31/5&8)&7 Checking compatibility...");
+        utils.log(LogLevel.INFO, "&8(&31/6&8)&7 Checking compatibility...");
         checkCompatibility();
 
-        utils.log(LogLevel.INFO, "&8(&32/5&8)&7 Loading files...");
+        utils.log(LogLevel.INFO, "&8(&32/6&8)&7 Loading files...");
         loadFiles();
 
-        utils.log(LogLevel.INFO, "&8(&33/5&8)&7 Registering events...");
+        utils.log(LogLevel.INFO, "&8(&33/6&8)&7 Loading custom commands...");
+        utils.reloadEnabledCommands();
+
+        utils.log(LogLevel.INFO, "&8(&34/6&8)&7 Registering events...");
         registerEvents();
 
-        utils.log(LogLevel.INFO, "&8(&34/5&8)&7 Registering commands...");
+        utils.log(LogLevel.INFO, "&8(&35/6&8)&7 Registering commands...");
         registerCommands();
 
-        utils.log(LogLevel.INFO, "&8(&35/5&8)&7 Starting metrics...");
+        utils.log(LogLevel.INFO, "&8(&36/6&8)&7 Starting metrics...");
         new Metrics(this, 7331);
 
         final long totalTime = System.currentTimeMillis() - startTime;

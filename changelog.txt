@@ -1,0 +1,5 @@
+v1.0.0-ALPHA:
+Init Release
+
+v1.0.1-ALPHA:
+Fixed enabled commands not loading at startup

@@ -6,7 +6,7 @@
 
     <groupId>io.github.lokka30</groupId>
     <artifactId>EasyTextCommands</artifactId>
-    <version>1.0.1-ALPHA</version>
+    <version>1.0.2-ALPHA</version>
 
     <name>EasyTextCommands</name>
     <description>A super easy way to make text commands</description>

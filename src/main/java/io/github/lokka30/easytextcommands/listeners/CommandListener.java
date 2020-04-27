@@ -19,72 +19,63 @@ public class CommandListener implements Listener {
     }
 
     @EventHandler
-    public void onCommand(final PlayerCommandPreprocessEvent event) {
-        final String command = event.getMessage();
+    public void onChat(final PlayerCommandPreprocessEvent event) {
+        final String command = event.getMessage().replaceFirst("/", "");
         final Player player = event.getPlayer();
 
-        if(event.isCancelled()) {
+        if (event.isCancelled()) {
             return;
         }
 
-        switch(command.toLowerCase()) {
-            case "easytextcommands":
-            case "etc":
-            case "easytextcmds":
+        switch (event.getMessage().toLowerCase()) {
+            case "/easytextcommands":
+            case "/etc":
+            case "/easytextcmds":
                 return;
             default:
-
-                String label;
-                final String[] args = command.split(" ");
-                if(args.length == 0) {
-                    label = command;
-                } else {
-                    label = args[0];
-                }
-
-                if(instance.getUtils().getEnabledCommands().contains(label)) {
+                if (instance.getUtils().getEnabledCommands().contains(command)) {
                     event.setCancelled(true);
 
-                    final String commandPath = "commands." + label + ".";
+                    final String commandPath = "commands." + command + ".";
 
                     final String permission = instance.getSettings().get(commandPath + "permission", null);
-                    if(permission != null) {
-                        if(!player.hasPermission(permission)) {
+                    if (permission != null) {
+                        if (!player.hasPermission(permission)) {
                             player.sendMessage(instance.getUtils().prefix(instance.getMessages().get("no-permission", "no perm")));
                             return;
                         }
                     }
 
                     final List<String> text = instance.getSettings().get(commandPath + "text", new ArrayList<>());
-                    if(text != null && text.size() != 0) {
-                        for(String msg : text) {
+                    if (text != null && text.size() != 0) {
+                        for (String msg : text) {
                             player.sendMessage(instance.getUtils().colorize(msg));
                         }
                     }
 
                     final String soundIdString = instance.getSettings().get(commandPath + "sound.id", null);
                     if(soundIdString != null) {
-                        Sound soundId = Sound.BLOCK_ANVIL_FALL;
+                        Sound soundId;
                         try {
                             soundId = Sound.valueOf(soundIdString);
                         } catch(IllegalArgumentException exception) {
-                            instance.getUtils().log(LogLevel.SEVERE, "Unknown sound id '&b" + soundIdString + "&7' in command '&b" + args[0] + "&7'!");
+                            instance.getUtils().log(LogLevel.SEVERE, "Unknown sound id '&b" + soundIdString + "&7' in command '&b" + command + "&7'!");
                             soundId = Sound.BLOCK_ANVIL_FALL;
                         }
 
-                        float volume = 1.0F;
+                        float volume;
                         try {
                             volume = instance.getSettings().get(commandPath + "sound.volume", 1.0F);
                         } catch(NumberFormatException exception) {
-                            instance.getUtils().log(LogLevel.SEVERE, "Invalid volume number '&b" + instance.getSettings().get(commandPath + "sound.volume", "Unknown") + "&7' in command '&b" + args[0] + "&7'!");
+                            instance.getUtils().log(LogLevel.SEVERE, "Invalid volume number '&b" + instance.getSettings().get(commandPath + "sound.volume", "Unknown") + "&7' in command '&b" + command + "&7'!");
                             volume = 1.0F;
                         }
 
-                        float pitch = 1.0F;
+                        float pitch;
                         try {
                             pitch = instance.getSettings().get(commandPath + "sound.pitch", 1.0F);
                         } catch(NumberFormatException exception) {
-                            instance.getUtils().log(LogLevel.SEVERE, "Invalid pitch number '&b" + instance.getSettings().get(commandPath + "sound.pitch", "Unknown") + "&7' in command '&b" + args[0] + "&7'!");
+                            instance.getUtils().log(LogLevel.SEVERE, "Invalid pitch number '&b" + instance.getSettings().get(commandPath + "sound.pitch", "Unknown") + "&7' in command '&b" + command + "&7'!");
                             pitch = 1.0F;
                         }
 

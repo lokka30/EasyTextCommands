@@ -2,4 +2,13 @@ v1.0.0-ALPHA:
 Init Release
 
 v1.0.1-ALPHA:
-Fixed enabled commands not loading at startup
+- Fixed - Enabled commands not loading at startup
+
+v1.0.2-ALPHA
+- Fixed - Commands not being executable
+- Fixed - Incorrect data folder path
+- Improvement - Using PlayerCommandPreprocessEvent instead of AsyncPlayerChatEvent.
+- Improvement - Removed bold plugin name in /etc + switched to abbreviation
+- Improvement - Only show 'reload' message if sender has permission to do so
+- Improvement - Changed updater disabled message
+- Revert - Removed sounds on '/etc' as older versions don't know what they mean

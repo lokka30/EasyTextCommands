@@ -70,7 +70,7 @@ public class EasyTextCommands extends JavaPlugin {
     }
 
     private void loadFiles() {
-        final String path = "plugins/Guilded/";
+        final String path = "plugins/EasyTextCommands/";
         settings = LightningBuilder
                 .fromFile(new File(path + "settings"))
                 .addInputStreamFromResource("settings.yml")
@@ -115,7 +115,7 @@ public class EasyTextCommands extends JavaPlugin {
     private void checkForUpdates() {
         //TODO Change Resource ID and remove "update-checker-bypass"
         if (!settings.get("update-checker-unimplemented-bypass", false)) {
-            utils.log(LogLevel.INFO, "&8(&3Update Checker&8) &7The update checker has not been implemented yet.");
+            utils.log(LogLevel.INFO, "&8(&3Update Checker&8) &7The update checker will be implemented in the next version.");
             return;
         }
         if (settings.get("use-update-checker", true)) {

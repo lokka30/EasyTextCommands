@@ -113,14 +113,9 @@ public class EasyTextCommands extends JavaPlugin {
     }
 
     private void checkForUpdates() {
-        //TODO Change Resource ID and remove "update-checker-bypass"
-        if (!settings.get("update-checker-unimplemented-bypass", false)) {
-            utils.log(LogLevel.INFO, "&8(&3Update Checker&8) &7The update checker will be implemented in the next version.");
-            return;
-        }
         if (settings.get("use-update-checker", true)) {
             utils.log(LogLevel.INFO, "&8(&3Update Checker&8) &7Checking for updates...");
-            new UpdateChecker(this, 12345).getVersion(version -> {
+            new UpdateChecker(this, 78013).getVersion(version -> {
                 if (getDescription().getVersion().equalsIgnoreCase(version)) {
                     utils.log(LogLevel.INFO, "&8(&3Update Checker&8) &7Thanks, you're running the latest version.");
                 } else {

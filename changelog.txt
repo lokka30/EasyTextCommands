@@ -12,3 +12,7 @@ v1.0.2-ALPHA
 - Improvement - Only show 'reload' message if sender has permission to do so
 - Improvement - Changed updater disabled message
 - Revert - Removed sounds on '/etc' as older versions don't know what they mean
+
+v1.0.3-ALPHA:
+- Note - Plugin is now in 'RELEASE' stage, as testing proved it to be stable.
+- Improvement - Update Checker now online!

@@ -54,7 +54,7 @@ public class Utils {
     }
 
     public List<String> getSupportedServerVersions() {
-        return Arrays.asList("1.15", "1.14", "1.13", "1.12", "1.11", "1.10", "1.9", "1.8", "1.7");
+        return Arrays.asList("1.16", "1.15", "1.14", "1.13", "1.12", "1.11", "1.10", "1.9", "1.8", "1.7");
     }
 
     public void reloadEnabledCommands() {

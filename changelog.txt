@@ -16,3 +16,12 @@ v1.0.2-ALPHA
 v1.0.3-RELEASE:
 - Note - Plugin is now in 'RELEASE' stage, as testing proved it to be stable.
 - Improvement - Update Checker now online!
+
+v1.0.4-RELEASE:
+- Improvement - Updated libraries
+
+v1.0.5-RELEASE:
+- Improvement | Added 1.16.1 support
+- Improvement | Compiled in Spigot 1.16.1.
+- Improvement | Added 1.16 to the supported versions in the compatibility checker on startup
+- Improvement | Updated libraries

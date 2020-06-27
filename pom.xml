@@ -6,7 +6,7 @@
 
     <groupId>io.github.lokka30</groupId>
     <artifactId>EasyTextCommands</artifactId>
-    <version>1.0.3-RELEASE</version>
+    <version>1.0.5-RELEASE</version>
 
     <name>EasyTextCommands</name>
     <description>A super easy way to make text commands</description>
@@ -89,7 +89,7 @@
         <dependency>
             <groupId>org.spigotmc</groupId>
             <artifactId>spigot-api</artifactId>
-            <version>1.15.2-R0.1-SNAPSHOT</version>
+            <version>1.16.1-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
@@ -101,7 +101,7 @@
         <dependency>
             <groupId>com.github.JavaFactoryDev</groupId>
             <artifactId>LightningStorage</artifactId>
-            <version>3.0.9</version>
+            <version>3.1.4</version>
         </dependency>
     </dependencies>
 </project>
